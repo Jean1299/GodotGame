@@ -1,5 +1,7 @@
 extends Node
 
+var minigames_done = 0 #how many minigames done
+var lives = 5 #track of how many lives left, also effecting garlic appearing
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
