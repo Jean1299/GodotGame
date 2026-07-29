@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://cyscjin6ad12a"]
+
+[ext_resource type="Script" uid="uid://dqoasv10ftdve" path="res://Scenes/winner_screen.gd" id="1_30022"]
+[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_whwiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
+size = Vector2(129, 126)
+
+[node name="Winner_Screen" type="Node2D" unique_id=1159450221]
+script = ExtResource("1_30022")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1379586250]
+offset_right = 1151.0
+offset_bottom = 642.0
+texture = ExtResource("1_whwiw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1847371558]
+clip_contents = false
+offset_left = 321.0
+offset_top = 61.0
+offset_right = 887.0
+offset_bottom = 219.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "You Won!!!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=837399115]
+offset_left = 448.0
+offset_top = 226.0
+offset_right = 733.0
+offset_bottom = 576.0
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=352199256]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Go to home screen"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=958842185]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=267752627]
+position = Vector2(209, -127)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=349925211]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=35272244]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=2111692189]
+position = Vector2(541, -481)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2" unique_id=2062908929]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=991064371]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=1145470006]
+position = Vector2(443, -167)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5" unique_id=602473285]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5" unique_id=322043940]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="." unique_id=1423834]
+position = Vector2(1027, -123)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D6" unique_id=1653032892]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6" unique_id=433069756]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D7" type="RigidBody2D" parent="." unique_id=1113179485]
+position = Vector2(749, -522)
+gravity_scale = 1.6
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D7" unique_id=1346422758]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7" unique_id=1764196049]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D9" type="RigidBody2D" parent="." unique_id=92158477]
+position = Vector2(966, -399)
+mass = 1.5
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D9" unique_id=489350769]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D9" unique_id=1165125762]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D10" type="RigidBody2D" parent="." unique_id=76449455]
+position = Vector2(220, -330)
+gravity_scale = 1.6
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D10" unique_id=19689610]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D10" unique_id=907123763]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D11" type="RigidBody2D" parent="." unique_id=1651428420]
+position = Vector2(982, -798)
+gravity_scale = 1.6
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D11" unique_id=1709726524]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D11" unique_id=1252110040]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D8" type="RigidBody2D" parent="." unique_id=1572304245]
+position = Vector2(321, -562)
+gravity_scale = 1.6
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D8" unique_id=1588878461]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D8" unique_id=761528378]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=2139724003]
+position = Vector2(628, -681)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3" unique_id=763510341]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" unique_id=606063096]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=2045584885]
+position = Vector2(797, -274)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4" unique_id=872403279]
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1163052387]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

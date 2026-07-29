@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://dqwlkolamukpc"]
 
+[ext_resource type="Script" uid="uid://cb8rm7spnql2b" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="1_enoba"]
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_11mgy"]
+[ext_resource type="Script" uid="uid://ctmoh24iqxmvn" path="res://Garlic.gd" id="3_0uv5o"]
+[ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="5_ojqsy"]
 
-[sub_resource type="Gradient" id="Gradient_faieq"]
+[sub_resource type="Gradient" id="Gradient_5txvl"]
 offsets = PackedFloat32Array(0, 0.36792454, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.4528302, 0.4528302, 0.4528302, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_khfec"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0uv5o"]
 noise_type = 2
 seed = 28374605
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6ox2p"]
-noise = SubResource("FastNoiseLite_khfec")
-color_ramp = SubResource("Gradient_faieq")
+noise = SubResource("FastNoiseLite_0uv5o")
+color_ramp = SubResource("Gradient_5txvl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
 size = Vector2(40, 40)
@@ -59,6 +62,7 @@ _data = {
 radius = 55.0
 
 [node name="minigame_1" type="Node2D" unique_id=1838899646]
+script = ExtResource("1_5txvl")
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1946441846]
 repeat_size = Vector2(100, 0)
@@ -130,8 +134,9 @@ scale = Vector2(0.6, 0.6)
 metadata/_edit_group_ = true
 
 [node name="Garlic" type="Node2D" parent="." unique_id=1073788493]
-position = Vector2(239.99998, 164.99998)
+position = Vector2(239.99998, 174.99997)
 scale = Vector2(0.7, 0.7)
+script = ExtResource("3_0uv5o")
 
 [node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1886960271]
 offset_left = 648.0
@@ -151,8 +156,9 @@ position = Vector2(693, 505)
 shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="Garlic2" type="Node2D" parent="." unique_id=775327834]
-position = Vector2(599.99994, -10.000015)
+position = Vector2(599.99994, 12.999984)
 scale = Vector2(0.7, 0.7)
+script = ExtResource("3_0uv5o")
 
 [node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=1600264780]
 offset_left = 648.0
@@ -172,8 +178,9 @@ position = Vector2(693, 505)
 shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="Garlic3" type="Node2D" parent="." unique_id=214403218]
-position = Vector2(-347.00006, -292)
+position = Vector2(-347.0001, -282.00003)
 scale = Vector2(0.7, 0.7)
+script = ExtResource("3_0uv5o")
 
 [node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=1314287345]
 offset_left = 648.0
@@ -191,3 +198,9 @@ libraries/ = SubResource("AnimationLibrary_5txvl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=15472058]
 position = Vector2(693, 505)
 shape = SubResource("CircleShape2D_0xlbj")
+
+[node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("5_ojqsy")]
+
+[connection signal="garlic_collected" from="Garlic" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Garlic2" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Garlic3" to="." method="garlic_collect"]
