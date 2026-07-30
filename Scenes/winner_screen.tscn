@@ -17,18 +17,18 @@ texture = ExtResource("1_whwiw")
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1847371558]
 clip_contents = false
 offset_left = 321.0
-offset_top = 61.0
+offset_top = 121.0
 offset_right = 887.0
-offset_bottom = 219.0
+offset_bottom = 279.0
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
 text = "You Won!!!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=837399115]
 offset_left = 448.0
-offset_top = 226.0
+offset_top = 282.0
 offset_right = 733.0
-offset_bottom = 576.0
+offset_bottom = 632.0
 
 [node name="Restart" type="Button" parent="VBoxContainer" unique_id=352199256]
 layout_mode = 2

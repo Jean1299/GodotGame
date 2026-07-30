@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bahtbhq3njyu6"]
+
+[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_ihkhm"]
+[ext_resource type="Script" uid="uid://c710acu2fsgb8" path="res://Scenes/minigame_3.gd" id="1_lr4ld"]
+[ext_resource type="Script" uid="uid://b2tp12os6hm6w" path="res://Scenes/rigid_body_2d.gd" id="1_we0jk"]
+[ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_we0jk"]
+[ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="3_6sdpr"]
+[ext_resource type="Script" uid="uid://bjis6nvr4vqoq" path="res://Scenes/ball.gd" id="6_rpf30"]
+
+[sub_resource type="Curve" id="Curve_10ilj"]
+_data = [Vector2(0.70454544, 0.3146068), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_puw7q"]
+_data = [Vector2(0.4848485, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_suvg2"]
+_data = [Vector2(0.5151515, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_5gdgd"]
+curve_x = SubResource("Curve_10ilj")
+curve_y = SubResource("Curve_puw7q")
+curve_z = SubResource("Curve_suvg2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sruok"]
+radius = 67.0
+
+[node name="minigame_3" type="Node2D" unique_id=1596580268]
+script = ExtResource("1_lr4ld")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1039879709]
+repeat_size = Vector2(100, 0)
+
+[node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=1111717063]
+offset_right = 1147.0
+offset_bottom = 655.0
+texture = SubResource("CurveXYZTexture_5gdgd")
+
+[node name="AI" type="RigidBody2D" parent="." unique_id=1450139022]
+position = Vector2(1108, 445)
+gravity_scale = 0.0
+script = ExtResource("1_we0jk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AI" unique_id=1859132983]
+scale = Vector2(0.2, 1)
+texture = ExtResource("1_ihkhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI" unique_id=221732827]
+scale = Vector2(0.2, 1)
+shape = SubResource("CircleShape2D_sruok")
+
+[node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("2_we0jk")]
+
+[node name="Player" parent="." unique_id=348849653 instance=ExtResource("3_6sdpr")]
+position = Vector2(74, 284)
+scale = Vector2(0.2, 1)
+
+[node name="ball" type="RigidBody2D" parent="." unique_id=492091452]
+position = Vector2(692, 246)
+gravity_scale = 0.0
+script = ExtResource("6_rpf30")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ball" unique_id=1842125713]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ihkhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=1560124096]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_sruok")
+
+[node name="Area2D" type="Area2D" parent="ball" unique_id=1692587986]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball/Area2D" unique_id=2104938877]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_sruok")

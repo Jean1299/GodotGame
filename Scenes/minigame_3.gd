@@ -8,12 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-
-func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
-
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+	$AI.position.y += ($ball.global_position.y - $AI.global_position.y) * 0.1
