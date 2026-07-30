@@ -2,10 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_ihkhm"]
 [ext_resource type="Script" uid="uid://c710acu2fsgb8" path="res://Scenes/minigame_3.gd" id="1_lr4ld"]
-[ext_resource type="Script" uid="uid://b2tp12os6hm6w" path="res://Scenes/rigid_body_2d.gd" id="1_we0jk"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_we0jk"]
-[ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="3_6sdpr"]
-[ext_resource type="Script" uid="uid://bjis6nvr4vqoq" path="res://Scenes/ball.gd" id="6_rpf30"]
+[ext_resource type="Script" uid="uid://dqr7pstolawwh" path="res://Scenes/garlic.gd" id="3_6sdpr"]
+[ext_resource type="Script" uid="uid://d1r0pxlxpk3y8" path="res://Scenes/block_player.gd" id="4_we0jk"]
 
 [sub_resource type="Curve" id="Curve_10ilj"]
 _data = [Vector2(0.70454544, 0.3146068), 0.0, 0.0, 0, 0]
@@ -27,6 +26,13 @@ curve_z = SubResource("Curve_suvg2")
 [sub_resource type="CircleShape2D" id="CircleShape2D_sruok"]
 radius = 67.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr4ld"]
+size = Vector2(40, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lr4ld"]
+radius = 12.0
+height = 155.99994
+
 [node name="minigame_3" type="Node2D" unique_id=1596580268]
 script = ExtResource("1_lr4ld")
 
@@ -38,42 +44,78 @@ offset_right = 1147.0
 offset_bottom = 655.0
 texture = SubResource("CurveXYZTexture_5gdgd")
 
-[node name="AI" type="RigidBody2D" parent="." unique_id=1450139022]
-position = Vector2(1108, 445)
-gravity_scale = 0.0
-script = ExtResource("1_we0jk")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="AI" unique_id=1859132983]
-scale = Vector2(0.2, 1)
-texture = ExtResource("1_ihkhm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AI" unique_id=221732827]
-scale = Vector2(0.2, 1)
-shape = SubResource("CircleShape2D_sruok")
-
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("2_we0jk")]
 
-[node name="Player" parent="." unique_id=348849653 instance=ExtResource("3_6sdpr")]
-position = Vector2(74, 284)
-scale = Vector2(0.2, 1)
-
-[node name="ball" type="RigidBody2D" parent="." unique_id=492091452]
-position = Vector2(692, 246)
-gravity_scale = 0.0
-script = ExtResource("6_rpf30")
+[node name="Garlic" type="RigidBody2D" parent="." unique_id=492091452]
+position = Vector2(566, 354)
+collision_priority = 2.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("3_6sdpr")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ball" unique_id=1842125713]
+[node name="Sprite2D" type="Sprite2D" parent="Garlic" unique_id=1842125713]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ihkhm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=1560124096]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic" unique_id=1560124096]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_sruok")
 
-[node name="Area2D" type="Area2D" parent="ball" unique_id=1692587986]
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=1692587986]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ball/Area2D" unique_id=2104938877]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=2104938877]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_sruok")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=284525762]
+position = Vector2(-81, 660)
+rotation = 1.5707964
+scale = Vector2(-16.512268, -2)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=471646027]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1700203435]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lr4ld")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=990870685]
+position = Vector2(1155.0001, 649)
+rotation = -1.5707964
+scale = Vector2(16.168985, 2.2901776)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1360500508]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=185256632]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lr4ld")
+
+[node name="Block_Player" type="StaticBody2D" parent="." unique_id=1285086097]
+position = Vector2(569, 614)
+rotation = 1.5707964
+script = ExtResource("4_we0jk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Block_Player" unique_id=1299240207]
+position = Vector2(0, -0.69975996)
+scale = Vector2(0.2, 1.2150298)
+texture = ExtResource("1_ihkhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block_Player" unique_id=370883581]
+shape = SubResource("CapsuleShape2D_lr4ld")
+
+[node name="Area2D2" type="Area2D" parent="Block_Player" unique_id=1454561108]
+scale = Vector2(1.36, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block_Player/Area2D2" unique_id=2063024068]
+shape = SubResource("CapsuleShape2D_lr4ld")
+
+[connection signal="garlic_passed" from="Garlic" to="." method="_on_garlic_garlic_passed"]
