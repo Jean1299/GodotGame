@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,14 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
-	Global.minigames_done = 0
-	Global.lives = 5
+	global_position = get_global_mouse_position()

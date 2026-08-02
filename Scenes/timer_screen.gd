@@ -15,12 +15,15 @@ func _ready() -> void:
 	await Timer(5.0) # using the function created
 	
 	if Global.minigames_done < 3:
-		Global.minigames_done  = Global.minigames_done + 1
-		get_tree().change_scene_to_file("res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn")
-		#contols which minigame to go to next
+		if Global.lives > 0:
+			Global.minigames_done  = Global.minigames_done + 1
+			get_tree().change_scene_to_file("res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn") #contols which minigame to go to next
+		elif Global.lives == 0:
+			get_tree().change_scene_to_file("res://Scenes/minigame.tscn")
 	else:
-		get_tree().change_scene_to_file("res://Scenes/title_screen.tscn") # changes your scene
-
+		get_tree().change_scene_to_file("res://Scenes/winner_screen.tscn")
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -42,7 +45,9 @@ func _process(delta: float) -> void:
 		0:
 			garlic_container.hide() # hide everything
 	timer.text = str(time) # make this text reflect the value of the time variable. this makes names easier. the str() converts int to string
-	level.text = "Level" + str(Global.minigames_done)#this tells you want minigame you're on using concatenation
+	level.text = "Level" + str(Global.minigames_done + 1)#this tells you want minigame you're on using concatenation
+	print(Global.lives)
+
 
 func Timer(start_time: float): # making new func for timer countdown
 	#want timer to go down, when it's 0 it goes to next scene

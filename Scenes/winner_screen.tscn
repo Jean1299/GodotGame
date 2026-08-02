@@ -2,17 +2,45 @@
 
 [ext_resource type="Script" uid="uid://dqoasv10ftdve" path="res://Scenes/winner_screen.gd" id="1_30022"]
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_whwiw"]
+[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_ncrrp"]
+
+[sub_resource type="Curve" id="Curve_10ilj"]
+_data = [Vector2(0.17424244, 0.8764045), 0.0, 0.0, 0, 0, Vector2(0.70454544, 0.3146068), 0.0, 0.0, 0, 0, Vector2(1, 0.876), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_puw7q"]
+_data = [Vector2(0.4848485, 1), 0.0, 0.0, 0, 0, Vector2(0.6666667, 0.55056185), 0.0, 0.0, 0, 0, Vector2(0.85616434, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_suvg2"]
+_data = [Vector2(0, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.5151515, 1), 0.0, 0.0, 0, 0, Vector2(0.7727273, 0.8876405), 0.0, 0.0, 0, 0, Vector2(1, 0.73), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_30022"]
+curve_x = SubResource("Curve_10ilj")
+curve_y = SubResource("Curve_puw7q")
+curve_z = SubResource("Curve_suvg2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
 size = Vector2(129, 126)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_30022"]
+radius = 32.882366
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30022"]
+size = Vector2(40, 40)
+
 [node name="Winner_Screen" type="Node2D" unique_id=1159450221]
 script = ExtResource("1_30022")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1379586250]
-offset_right = 1151.0
-offset_bottom = 642.0
-texture = ExtResource("1_whwiw")
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1798305581]
+repeat_size = Vector2(1145, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=345879709]
+offset_right = 1147.0
+offset_bottom = 655.0
+texture = SubResource("CurveXYZTexture_30022")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1847371558]
 clip_contents = false
@@ -52,6 +80,20 @@ texture = ExtResource("1_whwiw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=35272244]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="mouse follower" type="RigidBody2D" parent="." unique_id=1311301599]
+position = Vector2(230, 394)
+gravity_scale = 0.0
+script = ExtResource("3_ncrrp")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=484565216]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_whwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1827181923]
+shape = SubResource("CircleShape2D_30022")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=2111692189]
 position = Vector2(541, -481)
@@ -167,6 +209,50 @@ texture = ExtResource("1_whwiw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1163052387]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=898467609]
+position = Vector2(1159, 732)
+scale = Vector2(-28.912268, -2)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=2109430310]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1910166643]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_30022")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=14623428]
+position = Vector2(-81, 660)
+rotation = 1.5707964
+scale = Vector2(-16.512268, -2)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=2029597671]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1350298484]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_30022")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=769317587]
+position = Vector2(1153, 662)
+rotation = 1.5707964
+scale = Vector2(-16.512268, -2)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1246552121]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1657198582]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_30022")
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

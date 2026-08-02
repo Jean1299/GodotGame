@@ -22,7 +22,7 @@ color_ramp = SubResource("Gradient_5txvl")
 size = Vector2(40, 40)
 
 [sub_resource type="Animation" id="Animation_f6tb2"]
-length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,14 +30,14 @@ tracks/0/path = NodePath("Garlic:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(648, 465)]
+"values": [Vector2(648, 465), Vector2(648, 455)]
 }
 
-[sub_resource type="Animation" id="Animation_o6yob"]
-resource_name = "floating"
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "floating1"
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -49,13 +49,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(648, 465), Vector2(648, 461)]
+"values": [Vector2(648, 465), Vector2(648, 455)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5txvl"]
 _data = {
 &"RESET": SubResource("Animation_f6tb2"),
-&"floating": SubResource("Animation_o6yob")
+&"floating1": SubResource("Animation_5txvl")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xlbj"]
@@ -65,7 +65,8 @@ radius = 55.0
 script = ExtResource("1_5txvl")
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1946441846]
-repeat_size = Vector2(100, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
 
 [node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=197359429]
 offset_right = 1147.0
@@ -142,12 +143,13 @@ script = ExtResource("3_0uv5o")
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.0
+offset_bottom = 593.00024
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_11mgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic" unique_id=1696997936]
 libraries/ = SubResource("AnimationLibrary_5txvl")
+autoplay = &"floating1"
 
 [node name="Area2D" type="Area2D" parent="Garlic" unique_id=427156641]
 
@@ -164,12 +166,13 @@ script = ExtResource("3_0uv5o")
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.0
+offset_bottom = 593.0017
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_11mgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic2" unique_id=626641332]
 libraries/ = SubResource("AnimationLibrary_5txvl")
+autoplay = &"floating1"
 
 [node name="Area2D" type="Area2D" parent="Garlic2" unique_id=11872186]
 
@@ -186,12 +189,13 @@ script = ExtResource("3_0uv5o")
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.0
+offset_bottom = 593.0006
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_11mgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic3" unique_id=281056850]
 libraries/ = SubResource("AnimationLibrary_5txvl")
+autoplay = &"floating1"
 
 [node name="Area2D" type="Area2D" parent="Garlic3" unique_id=1225370181]
 

@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b22jqwnt8vvar" path="res://Scenes/timer_screen.gd" id="1_366df"]
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_f8hj7"]
+[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_f8hj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ry0ke"]
+radius = 32.882366
 
 [node name="timer_screen" type="Node2D" unique_id=180182896]
 script = ExtResource("1_366df")
@@ -44,7 +48,7 @@ offset_right = 528.0
 offset_bottom = 438.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 42
-text = "Level #"
+text = "Level 1"
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1323500382]
 offset_left = 661.0
@@ -54,3 +58,17 @@ offset_bottom = 439.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 42
 text = "0.0"
+
+[node name="mouse follower" type="RigidBody2D" parent="." unique_id=934682919]
+position = Vector2(230, 394)
+gravity_scale = 0.0
+script = ExtResource("3_f8hj7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=1269267738]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_f8hj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=2142684899]
+shape = SubResource("CircleShape2D_ry0ke")

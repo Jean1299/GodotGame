@@ -4,24 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_l4g8r"]
 [ext_resource type="Script" uid="uid://cbgu0g8xomh2p" path="res://Scenes/button_1.gd" id="2_dfb65"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="3_rfxq2"]
+[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="5_rfxq2"]
 
-[sub_resource type="Gradient" id="Gradient_faieq"]
+[sub_resource type="Gradient" id="Gradient_rfxq2"]
 offsets = PackedFloat32Array(0, 0.36792454, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.4528302, 0.4528302, 0.4528302, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_khfec"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mmgun"]
 noise_type = 2
 seed = 28374605
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mmgun"]
-noise = SubResource("FastNoiseLite_khfec")
-color_ramp = SubResource("Gradient_faieq")
+noise = SubResource("FastNoiseLite_mmgun")
+color_ramp = SubResource("Gradient_rfxq2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmgun"]
+radius = 32.882366
 
 [node name="Minigame_2" type="Node2D" unique_id=2109682091]
 script = ExtResource("1_dfb65")
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=832474413]
-repeat_size = Vector2(100, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
 
 [node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=816122426]
 offset_right = 1147.0
@@ -29,38 +34,52 @@ offset_bottom = 655.0
 texture = SubResource("NoiseTexture2D_mmgun")
 
 [node name="Button_1" type="TextureButton" parent="." unique_id=2124109130]
-offset_left = 195.0
-offset_top = 104.0
-offset_right = 323.0
-offset_bottom = 232.0
+offset_left = 251.0
+offset_top = 76.0
+offset_right = 379.0
+offset_bottom = 204.0
 texture_normal = ExtResource("1_l4g8r")
 script = ExtResource("2_dfb65")
 
 [node name="Button_2" type="TextureButton" parent="." unique_id=1394068479]
-offset_left = 779.0
-offset_top = 343.0
-offset_right = 907.0
-offset_bottom = 471.0
+offset_left = 698.0
+offset_top = 385.0
+offset_right = 826.0
+offset_bottom = 513.0
 texture_normal = ExtResource("1_l4g8r")
 script = ExtResource("2_dfb65")
 
 [node name="Button_3" type="TextureButton" parent="." unique_id=1013694867]
-offset_left = 993.0
-offset_top = 28.0
-offset_right = 1121.0
-offset_bottom = 156.0
+offset_left = 733.0
+offset_top = 23.0
+offset_right = 861.0
+offset_bottom = 151.0
 texture_normal = ExtResource("1_l4g8r")
 script = ExtResource("2_dfb65")
 
 [node name="Button_4" type="TextureButton" parent="." unique_id=1872097135]
-offset_left = 298.0
-offset_top = 492.0
-offset_right = 426.0
-offset_bottom = 620.0
+offset_left = 76.0
+offset_top = 410.0
+offset_right = 204.0
+offset_bottom = 538.0
 texture_normal = ExtResource("1_l4g8r")
 script = ExtResource("2_dfb65")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("3_rfxq2")]
+
+[node name="mouse follower" type="RigidBody2D" parent="." unique_id=388787119]
+position = Vector2(230, 394)
+gravity_scale = 0.0
+script = ExtResource("5_rfxq2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=1748464370]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l4g8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1283351614]
+shape = SubResource("CircleShape2D_mmgun")
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

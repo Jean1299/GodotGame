@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_klylv"]
 [ext_resource type="Script" uid="uid://cly7yvmb6wn8g" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_4gxqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twnyg"]
+radius = 32.882366
 
 [node name="TitleScreen" type="Node2D" unique_id=1714436432]
 script = ExtResource("1_p3fck")
@@ -19,7 +23,7 @@ clip_contents = false
 offset_left = 288.0
 offset_top = 56.0
 offset_right = 887.0
-offset_bottom = 188.0
+offset_bottom = 211.0
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
 text = "WarioWare"
@@ -47,6 +51,20 @@ layout_mode = 2
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 26
 text = "Quit"
+
+[node name="mouse follower" type="RigidBody2D" parent="." unique_id=1134456441]
+position = Vector2(230, 394)
+gravity_scale = 0.0
+script = ExtResource("3_4gxqj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=1762767968]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_klylv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1436496001]
+shape = SubResource("CircleShape2D_twnyg")
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
