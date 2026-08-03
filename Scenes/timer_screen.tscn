@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bl2esuyve4463"]
 
 [ext_resource type="Script" uid="uid://b22jqwnt8vvar" path="res://Scenes/timer_screen.gd" id="1_366df"]
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_f8hj7"]
 [ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_ry0ke"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_f8hj7"]
 [ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_tsv7m"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ry0ke"]
-radius = 32.882366
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry0ke"]
+radius = 34.0
+height = 106.0
 
 [node name="timer_screen" type="Node2D" unique_id=180182896]
 script = ExtResource("1_366df")
@@ -61,16 +61,12 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 42
 text = "0.0"
 
-[node name="mouse follower" type="RigidBody2D" parent="." unique_id=934682919]
+[node name="mouse follower2" type="RigidBody2D" parent="." unique_id=2015550917]
 position = Vector2(230, 394)
 gravity_scale = 0.0
 script = ExtResource("3_f8hj7")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=1269267738]
-position = Vector2(0, -1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_f8hj7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=2142684899]
-shape = SubResource("CircleShape2D_ry0ke")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower2" unique_id=1642832756]
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_ry0ke")

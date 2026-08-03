@@ -19,7 +19,7 @@ func _ready() -> void:
 			Global.minigames_done  = Global.minigames_done + 1
 			get_tree().change_scene_to_file("res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn") #contols which minigame to go to next
 		elif Global.lives == 0:
-			get_tree().change_scene_to_file("res://Scenes/minigame.tscn")
+			get_tree().change_scene_to_file("res://Scenes/dead_screen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/winner_screen.tscn")
 	

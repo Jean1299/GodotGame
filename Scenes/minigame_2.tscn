@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bgrdlm8nuigd4"]
 
 [ext_resource type="Script" uid="uid://biuxmxewu5r04" path="res://Scenes/minigame_2.gd" id="1_dfb65"]
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_l4g8r"]
 [ext_resource type="Script" uid="uid://cbgu0g8xomh2p" path="res://Scenes/button_1.gd" id="2_dfb65"]
 [ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="2_mmgun"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="3_rfxq2"]
@@ -19,8 +18,9 @@ seed = 28374605
 noise = SubResource("FastNoiseLite_mmgun")
 color_ramp = SubResource("Gradient_rfxq2")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mmgun"]
-radius = 32.882366
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfxq2"]
+radius = 34.0
+height = 106.0
 
 [node name="Minigame_2" type="Node2D" unique_id=2109682091]
 script = ExtResource("1_dfb65")
@@ -68,19 +68,15 @@ script = ExtResource("2_dfb65")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("3_rfxq2")]
 
-[node name="mouse follower" type="RigidBody2D" parent="." unique_id=388787119]
+[node name="mouse follower2" type="RigidBody2D" parent="." unique_id=718119046]
 position = Vector2(230, 394)
 gravity_scale = 0.0
 script = ExtResource("5_rfxq2")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=1748464370]
-position = Vector2(0, -1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_l4g8r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1283351614]
-shape = SubResource("CircleShape2D_mmgun")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower2" unique_id=1601751676]
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_rfxq2")
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

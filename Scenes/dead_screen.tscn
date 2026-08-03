@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://d4h888wpks70u"]
+[gd_scene format=3 uid="uid://cu5ixwtg2y56x"]
 
-[ext_resource type="Script" uid="uid://cvkwsf03nxuq1" path="res://dead.gd" id="1_s7wve"]
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_5bepb"]
-[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_5bepb"]
+[ext_resource type="Script" uid="uid://cvkwsf03nxuq1" path="res://dead.gd" id="1_pvlxc"]
+[ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_scbcd"]
+[ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_scbcd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xt64r"]
-radius = 32.882366
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvlxc"]
+radius = 34.0
+height = 106.0
 
 [node name="Dead_Screen" type="Node2D" unique_id=889434912]
-script = ExtResource("1_s7wve")
+script = ExtResource("1_pvlxc")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2105176140]
 offset_right = 1149.0
 offset_bottom = 648.0
-texture = ExtResource("2_5bepb")
+texture = ExtResource("2_scbcd")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1944265387]
 clip_contents = false
@@ -43,19 +44,15 @@ theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 26
 text = "Quit"
 
-[node name="mouse follower" type="RigidBody2D" parent="." unique_id=887264036]
+[node name="mouse follower2" type="RigidBody2D" parent="." unique_id=1504112043]
 position = Vector2(230, 394)
 gravity_scale = 0.0
-script = ExtResource("3_5bepb")
+script = ExtResource("3_scbcd")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=582049358]
-position = Vector2(0, -1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_5bepb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1579872953]
-shape = SubResource("CircleShape2D_xt64r")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower2" unique_id=1903746520]
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_pvlxc")
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
