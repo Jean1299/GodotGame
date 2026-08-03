@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://biuxmxewu5r04" path="res://Scenes/minigame_2.gd" id="1_dfb65"]
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_l4g8r"]
 [ext_resource type="Script" uid="uid://cbgu0g8xomh2p" path="res://Scenes/button_1.gd" id="2_dfb65"]
+[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="2_mmgun"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="3_rfxq2"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="5_rfxq2"]
 
@@ -38,7 +39,7 @@ offset_left = 251.0
 offset_top = 76.0
 offset_right = 379.0
 offset_bottom = 204.0
-texture_normal = ExtResource("1_l4g8r")
+texture_normal = ExtResource("2_mmgun")
 script = ExtResource("2_dfb65")
 
 [node name="Button_2" type="TextureButton" parent="." unique_id=1394068479]
@@ -46,7 +47,7 @@ offset_left = 698.0
 offset_top = 385.0
 offset_right = 826.0
 offset_bottom = 513.0
-texture_normal = ExtResource("1_l4g8r")
+texture_normal = ExtResource("2_mmgun")
 script = ExtResource("2_dfb65")
 
 [node name="Button_3" type="TextureButton" parent="." unique_id=1013694867]
@@ -54,7 +55,7 @@ offset_left = 733.0
 offset_top = 23.0
 offset_right = 861.0
 offset_bottom = 151.0
-texture_normal = ExtResource("1_l4g8r")
+texture_normal = ExtResource("2_mmgun")
 script = ExtResource("2_dfb65")
 
 [node name="Button_4" type="TextureButton" parent="." unique_id=1872097135]
@@ -62,7 +63,7 @@ offset_left = 76.0
 offset_top = 410.0
 offset_right = 204.0
 offset_bottom = 538.0
-texture_normal = ExtResource("1_l4g8r")
+texture_normal = ExtResource("2_mmgun")
 script = ExtResource("2_dfb65")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("3_rfxq2")]

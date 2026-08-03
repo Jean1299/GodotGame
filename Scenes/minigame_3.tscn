@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bahtbhq3njyu6"]
 
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_ihkhm"]
 [ext_resource type="Script" uid="uid://c710acu2fsgb8" path="res://Scenes/minigame_3.gd" id="1_lr4ld"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_we0jk"]
 [ext_resource type="Script" uid="uid://dqr7pstolawwh" path="res://Scenes/garlic.gd" id="3_6sdpr"]
+[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="4_lr4ld"]
 [ext_resource type="Script" uid="uid://d1r0pxlxpk3y8" path="res://Scenes/block_player.gd" id="4_we0jk"]
+[ext_resource type="Texture2D" uid="uid://crdbm0qetsuge" path="res://broadsword_recolor.png" id="6_lr4ld"]
 
 [sub_resource type="Gradient" id="Gradient_faieq"]
 offsets = PackedFloat32Array(0, 0.36792454, 1)
@@ -51,8 +52,8 @@ script = ExtResource("3_6sdpr")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Garlic" unique_id=1842125713]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ihkhm")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_lr4ld")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic" unique_id=1560124096]
 scale = Vector2(0.5, 0.5)
@@ -101,9 +102,10 @@ script = ExtResource("4_we0jk")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Block_Player" unique_id=1299240207]
-position = Vector2(0, -0.69975996)
-scale = Vector2(0.2, 1.2150298)
-texture = ExtResource("1_ihkhm")
+position = Vector2(1.5026455, -5.5832634)
+rotation = -0.7254213
+scale = Vector2(0.62757313, 0.6434042)
+texture = ExtResource("6_lr4ld")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block_Player" unique_id=370883581]
 shape = SubResource("CapsuleShape2D_lr4ld")

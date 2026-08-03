@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b22jqwnt8vvar" path="res://Scenes/timer_screen.gd" id="1_366df"]
 [ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_f8hj7"]
+[ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_ry0ke"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_f8hj7"]
+[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_tsv7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ry0ke"]
 radius = 32.882366
@@ -13,33 +15,33 @@ script = ExtResource("1_366df")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1007648444]
 offset_right = 1150.0
 offset_bottom = 651.0
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("2_ry0ke")
 
 [node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=275774164]
-offset_left = 246.0
+offset_left = 312.0
 offset_top = 105.0
-offset_right = 902.0
+offset_right = 841.0
 offset_bottom = 233.0
 
 [node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=575847778]
 layout_mode = 2
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("3_tsv7m")
 
 [node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=2109391757]
 layout_mode = 2
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("3_tsv7m")
 
 [node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=327069819]
 layout_mode = 2
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("3_tsv7m")
 
 [node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=967921493]
 layout_mode = 2
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("3_tsv7m")
 
 [node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=710182351]
 layout_mode = 2
-texture = ExtResource("2_f8hj7")
+texture = ExtResource("3_tsv7m")
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=298350931]
 offset_left = 358.0

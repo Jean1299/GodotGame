@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cb8rm7spnql2b" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="1_enoba"]
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="2_11mgy"]
 [ext_resource type="Script" uid="uid://ctmoh24iqxmvn" path="res://Garlic.gd" id="3_0uv5o"]
+[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="5_ojqsy"]
 
 [sub_resource type="Gradient" id="Gradient_5txvl"]
@@ -102,7 +102,7 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_0xlbj")
 
 [node name="Platform3" type="StaticBody2D" parent="." unique_id=1527944046]
-position = Vector2(221, 280.99997)
+position = Vector2(221.00002, 255)
 scale = Vector2(13.288988, 0.6681395)
 metadata/_edit_group_ = true
 
@@ -129,23 +129,17 @@ color = Color(0.38039216, 0.69803923, 0.39215687, 1)
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_0xlbj")
 
-[node name="Player" parent="." unique_id=348849653 instance=ExtResource("1_enoba")]
-position = Vector2(88, 518)
-scale = Vector2(0.6, 0.6)
-metadata/_edit_group_ = true
-
 [node name="Garlic" type="Node2D" parent="." unique_id=1073788493]
-position = Vector2(239.99998, 174.99997)
-scale = Vector2(0.7, 0.7)
+position = Vector2(205, 162)
+scale = Vector2(0.6675594, 0.6960127)
 script = ExtResource("3_0uv5o")
 
 [node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1886960271]
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.00024
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_11mgy")
+offset_bottom = 593.00073
+texture = ExtResource("3_5txvl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic" unique_id=1696997936]
 libraries/ = SubResource("AnimationLibrary_5txvl")
@@ -154,11 +148,11 @@ autoplay = &"floating1"
 [node name="Area2D" type="Area2D" parent="Garlic" unique_id=427156641]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=751250872]
-position = Vector2(693, 505)
+position = Vector2(710.0492, 522.979)
 shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="Garlic2" type="Node2D" parent="." unique_id=775327834]
-position = Vector2(599.99994, 12.999984)
+position = Vector2(585, 0)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("3_0uv5o")
 
@@ -166,9 +160,8 @@ script = ExtResource("3_0uv5o")
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.0017
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_11mgy")
+offset_bottom = 593.00134
+texture = ExtResource("3_5txvl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic2" unique_id=626641332]
 libraries/ = SubResource("AnimationLibrary_5txvl")
@@ -177,11 +170,11 @@ autoplay = &"floating1"
 [node name="Area2D" type="Area2D" parent="Garlic2" unique_id=11872186]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=1473194429]
-position = Vector2(693, 505)
+position = Vector2(711.4286, 528.5714)
 shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="Garlic3" type="Node2D" parent="." unique_id=214403218]
-position = Vector2(-347.0001, -282.00003)
+position = Vector2(-369, -297)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("3_0uv5o")
 
@@ -189,9 +182,8 @@ script = ExtResource("3_0uv5o")
 offset_left = 648.0
 offset_top = 465.0
 offset_right = 776.0
-offset_bottom = 593.0006
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_11mgy")
+offset_bottom = 593.0012
+texture = ExtResource("3_5txvl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic3" unique_id=281056850]
 libraries/ = SubResource("AnimationLibrary_5txvl")
@@ -200,10 +192,13 @@ autoplay = &"floating1"
 [node name="Area2D" type="Area2D" parent="Garlic3" unique_id=1225370181]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=15472058]
-position = Vector2(693, 505)
+position = Vector2(714.2857, 531.4286)
 shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("5_ojqsy")]
+
+[node name="Player" parent="." unique_id=348849653 instance=ExtResource("1_enoba")]
+position = Vector2(64, 500)
 
 [connection signal="garlic_collected" from="Garlic" to="." method="garlic_collect"]
 [connection signal="garlic_collected" from="Garlic2" to="." method="garlic_collect"]
