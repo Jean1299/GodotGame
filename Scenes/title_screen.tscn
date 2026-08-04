@@ -12,10 +12,10 @@ height = 106.0
 script = ExtResource("1_p3fck")
 
 [node name="Background" type="TextureRect" parent="." unique_id=780708591]
-offset_left = 2.6069047
-offset_top = 1.0047929
-offset_right = 1152.1
-offset_bottom = 645.19904
+offset_left = -7.1079645
+offset_top = -6.8222685
+offset_right = 1159.8949
+offset_bottom = 652.99396
 rotation = 0.0018385518
 texture = ExtResource("2_twnyg")
 

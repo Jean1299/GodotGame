@@ -1,23 +1,12 @@
 [gd_scene format=3 uid="uid://bahtbhq3njyu6"]
 
 [ext_resource type="Script" uid="uid://c710acu2fsgb8" path="res://Scenes/minigame_3.gd" id="1_lr4ld"]
+[ext_resource type="Texture2D" uid="uid://clgnmojnrbima" path="res://wall128x128.png" id="2_rpf30"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_we0jk"]
 [ext_resource type="Script" uid="uid://dqr7pstolawwh" path="res://Scenes/garlic.gd" id="3_6sdpr"]
 [ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="4_lr4ld"]
 [ext_resource type="Script" uid="uid://d1r0pxlxpk3y8" path="res://Scenes/block_player.gd" id="4_we0jk"]
 [ext_resource type="Texture2D" uid="uid://crdbm0qetsuge" path="res://broadsword_recolor.png" id="6_lr4ld"]
-
-[sub_resource type="Gradient" id="Gradient_faieq"]
-offsets = PackedFloat32Array(0, 0.36792454, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.4528302, 0.4528302, 0.4528302, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_khfec"]
-noise_type = 2
-seed = 28374605
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6sdpr"]
-noise = SubResource("FastNoiseLite_khfec")
-color_ramp = SubResource("Gradient_faieq")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sruok"]
 radius = 67.0
@@ -39,7 +28,7 @@ autoscroll = Vector2(100, 0)
 [node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=1980750089]
 offset_right = 1147.0
 offset_bottom = 655.0
-texture = SubResource("NoiseTexture2D_6sdpr")
+texture = ExtResource("2_rpf30")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("2_we0jk")]
 
@@ -66,7 +55,7 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_sruok")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=284525762]
-position = Vector2(-81, 660)
+position = Vector2(-89, 660)
 rotation = 1.5707964
 scale = Vector2(-16.512268, -2)
 metadata/_edit_group_ = true

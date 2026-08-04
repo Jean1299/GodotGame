@@ -13,8 +13,10 @@ height = 106.0
 script = ExtResource("1_366df")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1007648444]
-offset_right = 1150.0
-offset_bottom = 651.0
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 1166.0
+offset_bottom = 661.0
 texture = ExtResource("2_ry0ke")
 
 [node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=275774164]

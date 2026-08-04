@@ -2,21 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cb8rm7spnql2b" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="1_enoba"]
+[ext_resource type="Texture2D" uid="uid://clgnmojnrbima" path="res://wall128x128.png" id="2_0uv5o"]
 [ext_resource type="Script" uid="uid://ctmoh24iqxmvn" path="res://Garlic.gd" id="3_0uv5o"]
 [ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="5_ojqsy"]
-
-[sub_resource type="Gradient" id="Gradient_5txvl"]
-offsets = PackedFloat32Array(0, 0.36792454, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.4528302, 0.4528302, 0.4528302, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_0uv5o"]
-noise_type = 2
-seed = 28374605
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6ox2p"]
-noise = SubResource("FastNoiseLite_0uv5o")
-color_ramp = SubResource("Gradient_5txvl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
 size = Vector2(40, 40)
@@ -71,7 +60,7 @@ autoscroll = Vector2(100, 0)
 [node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=197359429]
 offset_right = 1147.0
 offset_bottom = 655.0
-texture = SubResource("NoiseTexture2D_6ox2p")
+texture = ExtResource("2_0uv5o")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=1539857907]
 position = Vector2(0, 572)
@@ -199,6 +188,36 @@ shape = SubResource("CircleShape2D_0xlbj")
 
 [node name="Player" parent="." unique_id=348849653 instance=ExtResource("1_enoba")]
 position = Vector2(64, 500)
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=1030910858]
+position = Vector2(-100, 572)
+rotation = -1.5707964
+scale = Vector2(28.80899, 2.2901776)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=1341532030]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=1576614582]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_0xlbj")
+
+[node name="Platform6" type="StaticBody2D" parent="." unique_id=833342443]
+position = Vector2(1156, 572)
+rotation = -1.5707964
+scale = Vector2(28.80899, 2.2901776)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=1439725678]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=1474931313]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_0xlbj")
 
 [connection signal="garlic_collected" from="Garlic" to="." method="garlic_collect"]
 [connection signal="garlic_collected" from="Garlic2" to="." method="garlic_collect"]

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cyscjin6ad12a"]
 
 [ext_resource type="Script" uid="uid://dqoasv10ftdve" path="res://Scenes/winner_screen.gd" id="1_30022"]
-[ext_resource type="Texture2D" uid="uid://b213mhx2mutoi" path="res://icon.svg" id="1_whwiw"]
 [ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="2_b2loe"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_ncrrp"]
 
@@ -25,11 +24,12 @@ curve_z = SubResource("Curve_suvg2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
 size = Vector2(129, 126)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_30022"]
-radius = 32.882366
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30022"]
 size = Vector2(40, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncrrp"]
+radius = 34.0
+height = 106.0
 
 [node name="Winner_Screen" type="Node2D" unique_id=1159450221]
 script = ExtResource("1_30022")
@@ -82,20 +82,6 @@ texture = ExtResource("2_b2loe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=35272244]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_0xlbj")
-
-[node name="mouse follower" type="RigidBody2D" parent="." unique_id=1311301599]
-position = Vector2(230, 394)
-gravity_scale = 0.0
-script = ExtResource("3_ncrrp")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="mouse follower" unique_id=484565216]
-position = Vector2(0, -1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_whwiw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower" unique_id=1827181923]
-shape = SubResource("CircleShape2D_30022")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=2111692189]
 position = Vector2(541, -481)
@@ -265,6 +251,16 @@ color = Color(0.38039216, 0.69803923, 0.39215687, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1657198582]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_30022")
+
+[node name="mouse follower2" type="RigidBody2D" parent="." unique_id=583944416]
+position = Vector2(230, 394)
+gravity_scale = 0.0
+script = ExtResource("3_ncrrp")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse follower2" unique_id=67876074]
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_ncrrp")
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

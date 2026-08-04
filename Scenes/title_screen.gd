@@ -17,7 +17,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/timer_screen.tscn")
 
 
 func _on_quit_pressed() -> void:
