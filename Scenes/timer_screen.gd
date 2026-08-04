@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 			garlic_container.hide() # hide everything
 	timer.text = str(time) # make this text reflect the value of the time variable. this makes names easier. the str() converts int to string
 	level.text = "Level" + str(Global.minigames_done + 1)#this tells you want minigame you're on using concatenation
-	print(Global.lives)
+	#print(Global.lives)
 
 
 func Timer(start_time: float): # making new func for timer countdown

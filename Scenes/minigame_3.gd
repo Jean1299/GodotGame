@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/timer_screen.tscn")
 	if garlic_collected == 5:
 		get_tree().change_scene_to_file("res://Scenes/timer_screen.tscn")
-	print(garlic_collected)
+	#print(garlic_collected)
 
 
 func _on_garlic_garlic_passed() -> void:
