@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cb8rm7spnql2b" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://c6v2qe220ubos" path="res://Scenes/player.tscn" id="1_enoba"]
-[ext_resource type="Texture2D" uid="uid://clgnmojnrbima" path="res://wall128x128.png" id="2_0uv5o"]
+[ext_resource type="Texture2D" uid="uid://bvoqfieix4bje" path="res://wall.png" id="2_ojqsy"]
 [ext_resource type="Script" uid="uid://ctmoh24iqxmvn" path="res://Garlic.gd" id="3_0uv5o"]
-[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_5txvl"]
+[ext_resource type="Texture2D" uid="uid://ld7s5nf4ii1u" path="res://Coin.png" id="4_jmcek"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="5_ojqsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
@@ -12,34 +12,10 @@ size = Vector2(40, 40)
 
 [sub_resource type="Animation" id="Animation_f6tb2"]
 loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Garlic:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(648, 465), Vector2(648, 455)]
-}
 
 [sub_resource type="Animation" id="Animation_5txvl"]
 resource_name = "floating1"
 loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Garlic:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(648, 465), Vector2(648, 455)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5txvl"]
 _data = {
@@ -60,7 +36,7 @@ autoscroll = Vector2(100, 0)
 [node name="background" type="TextureRect" parent="ScrollingBackground" unique_id=197359429]
 offset_right = 1147.0
 offset_bottom = 655.0
-texture = ExtResource("2_0uv5o")
+texture = ExtResource("2_ojqsy")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=1539857907]
 position = Vector2(0, 572)
@@ -124,11 +100,13 @@ scale = Vector2(0.6675594, 0.6960127)
 script = ExtResource("3_0uv5o")
 
 [node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1886960271]
-offset_left = 648.0
-offset_top = 465.0
-offset_right = 776.0
-offset_bottom = 593.00073
-texture = ExtResource("3_5txvl")
+offset_left = 447.9002
+offset_top = 172.6279
+offset_right = 1004.9002
+offset_bottom = 896.6279
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.47, 0.47)
+texture = ExtResource("4_jmcek")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic" unique_id=1696997936]
 libraries/ = SubResource("AnimationLibrary_5txvl")
@@ -145,14 +123,16 @@ position = Vector2(585, 0)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("3_0uv5o")
 
-[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=1600264780]
-offset_left = 648.0
-offset_top = 465.0
-offset_right = 776.0
-offset_bottom = 593.00134
-texture = ExtResource("3_5txvl")
+[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=1452122357]
+offset_left = 447.90012
+offset_top = 172.62784
+offset_right = 1004.90015
+offset_bottom = 896.6278
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.47, 0.47)
+texture = ExtResource("4_jmcek")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic2" unique_id=626641332]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic2" unique_id=563922229]
 libraries/ = SubResource("AnimationLibrary_5txvl")
 autoplay = &"floating1"
 
@@ -167,14 +147,16 @@ position = Vector2(-369, -297)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("3_0uv5o")
 
-[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=1314287345]
-offset_left = 648.0
-offset_top = 465.0
-offset_right = 776.0
-offset_bottom = 593.0012
-texture = ExtResource("3_5txvl")
+[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=1630434580]
+offset_left = 447.90018
+offset_top = 172.62784
+offset_right = 1004.90015
+offset_bottom = 896.6278
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.47, 0.47)
+texture = ExtResource("4_jmcek")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic3" unique_id=281056850]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic3" unique_id=1628899165]
 libraries/ = SubResource("AnimationLibrary_5txvl")
 autoplay = &"floating1"
 
