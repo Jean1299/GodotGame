@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if buttons_pressed == 4:
+	if buttons_pressed == 5:
 		if Global.minigames_done > 3:
 			get_tree().change_scene_to_file("res://Scenes/done_screen.tscn")
 		else:

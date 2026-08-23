@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://biuxmxewu5r04" path="res://Scenes/minigame_2.gd" id="1_dfb65"]
 [ext_resource type="Script" uid="uid://cbgu0g8xomh2p" path="res://Scenes/button_1.gd" id="2_dfb65"]
-[ext_resource type="Texture2D" uid="uid://clgnmojnrbima" path="res://wall128x128.png" id="2_h684j"]
-[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="2_mmgun"]
+[ext_resource type="Texture2D" uid="uid://bvoqfieix4bje" path="res://wall.png" id="2_h684j"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="3_rfxq2"]
+[ext_resource type="Texture2D" uid="uid://ld7s5nf4ii1u" path="res://Coin.png" id="3_wu6l1"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="5_rfxq2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfxq2"]
@@ -24,36 +24,79 @@ offset_bottom = 655.0
 texture = ExtResource("2_h684j")
 
 [node name="Button_1" type="TextureButton" parent="." unique_id=2124109130]
-offset_left = 251.0
-offset_top = 76.0
-offset_right = 379.0
-offset_bottom = 204.0
-texture_normal = ExtResource("2_mmgun")
+offset_left = 47.0
+offset_top = 18.000008
+offset_right = 275.23694
+offset_bottom = 258.05933
+scale = Vector2(0.5, 0.476)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("2_dfb65")
+metadata/_edit_group_ = true
 
-[node name="Button_2" type="TextureButton" parent="." unique_id=1394068479]
-offset_left = 698.0
-offset_top = 385.0
-offset_right = 826.0
-offset_bottom = 513.0
-texture_normal = ExtResource("2_mmgun")
-script = ExtResource("2_dfb65")
+[node name="Sprite2D" type="Sprite2D" parent="Button_1" unique_id=1112911095]
+position = Vector2(127.02637, 135.74493)
+scale = Vector2(0.7959385, 0.85920465)
+texture = ExtResource("3_wu6l1")
 
-[node name="Button_3" type="TextureButton" parent="." unique_id=1013694867]
-offset_left = 733.0
-offset_top = 23.0
-offset_right = 861.0
-offset_bottom = 151.0
-texture_normal = ExtResource("2_mmgun")
+[node name="Button_2" type="TextureButton" parent="." unique_id=1822188744]
+offset_left = 205.0
+offset_top = 394.0
+offset_right = 433.23694
+offset_bottom = 634.0593
+scale = Vector2(0.5, 0.476)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("2_dfb65")
+metadata/_edit_group_ = true
 
-[node name="Button_4" type="TextureButton" parent="." unique_id=1872097135]
-offset_left = 76.0
-offset_top = 410.0
-offset_right = 204.0
-offset_bottom = 538.0
-texture_normal = ExtResource("2_mmgun")
+[node name="Sprite2D" type="Sprite2D" parent="Button_2" unique_id=232634315]
+position = Vector2(127.02637, 135.74493)
+scale = Vector2(0.7959385, 0.85920465)
+texture = ExtResource("3_wu6l1")
+
+[node name="Button_3" type="TextureButton" parent="." unique_id=898083129]
+offset_left = 874.0
+offset_top = 142.0
+offset_right = 1102.2369
+offset_bottom = 382.05933
+scale = Vector2(0.5, 0.476)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("2_dfb65")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button_3" unique_id=1071751889]
+position = Vector2(127.02637, 135.74493)
+scale = Vector2(0.7959385, 0.85920465)
+texture = ExtResource("3_wu6l1")
+
+[node name="Button_4" type="TextureButton" parent="." unique_id=1399848626]
+offset_left = 433.0
+offset_top = 124.0
+offset_right = 661.23694
+offset_bottom = 364.05933
+scale = Vector2(0.5, 0.476)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("2_dfb65")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button_4" unique_id=1376890778]
+position = Vector2(127.02637, 135.74493)
+scale = Vector2(0.7959385, 0.85920465)
+texture = ExtResource("3_wu6l1")
+
+[node name="Button_5" type="TextureButton" parent="." unique_id=805238605]
+offset_left = 791.0
+offset_top = 422.0
+offset_right = 1019.23694
+offset_bottom = 662.0593
+scale = Vector2(0.5, 0.476)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("2_dfb65")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button_5" unique_id=381605172]
+position = Vector2(127.02637, 135.74493)
+scale = Vector2(0.7959385, 0.85920465)
+texture = ExtResource("3_wu6l1")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("3_rfxq2")]
 
@@ -71,3 +114,4 @@ shape = SubResource("CapsuleShape2D_rfxq2")
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
 [connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
 [connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]
+[connection signal="pressed" from="Button_5" to="Button_5" method="_on_pressed"]

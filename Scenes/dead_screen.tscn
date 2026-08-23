@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cu5ixwtg2y56x"]
 
 [ext_resource type="Script" uid="uid://cvkwsf03nxuq1" path="res://dead.gd" id="1_pvlxc"]
-[ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_scbcd"]
+[ext_resource type="Texture2D" uid="uid://xgl4is6dvbcw" path="res://Scenes/losingCastle.png" id="2_pvlxc"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_scbcd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvlxc"]
@@ -14,7 +14,7 @@ script = ExtResource("1_pvlxc")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2105176140]
 offset_right = 1149.0
 offset_bottom = 648.0
-texture = ExtResource("2_scbcd")
+texture = ExtResource("2_pvlxc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1944265387]
 clip_contents = false

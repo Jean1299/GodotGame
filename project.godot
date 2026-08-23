@@ -21,7 +21,8 @@ Global="*uid://be05s6ji1twcv"
 
 [display]
 
-mouse_cursor/custom_image="uid://5q1bgj53gu84"
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cre2jov5jx2mb"
 
 [editor_plugins]
 

@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if timer_end == true:
 		Global.lives -= 1
 		get_tree().change_scene_to_file("res://Scenes/timer_screen.tscn")
-	if garlic_collected == 5:
+	if garlic_collected == 6:
 		get_tree().change_scene_to_file("res://Scenes/timer_screen.tscn")
 	#print(garlic_collected)
 

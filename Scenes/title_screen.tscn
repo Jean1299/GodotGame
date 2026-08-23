@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm26v3tpxnuy8"]
 
 [ext_resource type="Script" uid="uid://cly7yvmb6wn8g" path="res://Scenes/title_screen.gd" id="1_p3fck"]
-[ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_twnyg"]
+[ext_resource type="Texture2D" uid="uid://drr40ebgsdqtk" path="res://castle.png" id="2_4gxqj"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_4gxqj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gxqj"]
@@ -17,7 +17,7 @@ offset_top = -6.8222685
 offset_right = 1159.8949
 offset_bottom = 652.99396
 rotation = 0.0018385518
-texture = ExtResource("2_twnyg")
+texture = ExtResource("2_4gxqj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1750042978]
 clip_contents = false

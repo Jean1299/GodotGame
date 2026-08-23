@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bl2esuyve4463"]
 
 [ext_resource type="Script" uid="uid://b22jqwnt8vvar" path="res://Scenes/timer_screen.gd" id="1_366df"]
-[ext_resource type="Texture2D" uid="uid://b5t2f6ngjdj2p" path="res://PreviewSmall_1.png" id="2_ry0ke"]
+[ext_resource type="Texture2D" uid="uid://drr40ebgsdqtk" path="res://castle.png" id="2_ry0ke"]
 [ext_resource type="Script" uid="uid://clui0cx5jhp4r" path="res://Scenes/mouse_follower.gd" id="3_f8hj7"]
-[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="3_tsv7m"]
+[ext_resource type="Texture2D" uid="uid://ibkgr3rt8nxh" path="res://Scenes/life.png" id="3_tsv7m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry0ke"]
 radius = 34.0
@@ -20,10 +20,12 @@ offset_bottom = 661.0
 texture = ExtResource("2_ry0ke")
 
 [node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=275774164]
-offset_left = 312.0
-offset_top = 105.0
-offset_right = 841.0
-offset_bottom = 233.0
+offset_left = -679.5
+offset_top = 30.0
+offset_right = 1836.5
+offset_bottom = 754.0
+scale = Vector2(0.42, 0.28)
+pivot_offset_ratio = Vector2(0.5, 0)
 
 [node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=575847778]
 layout_mode = 2

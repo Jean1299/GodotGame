@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bahtbhq3njyu6"]
 
 [ext_resource type="Script" uid="uid://c710acu2fsgb8" path="res://Scenes/minigame_3.gd" id="1_lr4ld"]
-[ext_resource type="Texture2D" uid="uid://clgnmojnrbima" path="res://wall128x128.png" id="2_rpf30"]
+[ext_resource type="Texture2D" uid="uid://bvoqfieix4bje" path="res://wall.png" id="2_rpf30"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_we0jk"]
 [ext_resource type="Script" uid="uid://dqr7pstolawwh" path="res://Scenes/garlic.gd" id="3_6sdpr"]
-[ext_resource type="Texture2D" uid="uid://db2u3ohksuddb" path="res://coin 2_0.png" id="4_lr4ld"]
 [ext_resource type="Script" uid="uid://d1r0pxlxpk3y8" path="res://Scenes/block_player.gd" id="4_we0jk"]
-[ext_resource type="Texture2D" uid="uid://crdbm0qetsuge" path="res://broadsword_recolor.png" id="6_lr4ld"]
+[ext_resource type="Texture2D" uid="uid://ld7s5nf4ii1u" path="res://Coin.png" id="5_rpf30"]
+[ext_resource type="Texture2D" uid="uid://0nenxl2amk3y" path="res://sword.png" id="7_rpf30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sruok"]
-radius = 67.0
+radius = 72.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr4ld"]
 size = Vector2(40, 40)
@@ -41,8 +41,9 @@ script = ExtResource("3_6sdpr")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Garlic" unique_id=1842125713]
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_lr4ld")
+position = Vector2(4.1500244, 5.799988)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_rpf30")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic" unique_id=1560124096]
 scale = Vector2(0.5, 0.5)
@@ -91,10 +92,10 @@ script = ExtResource("4_we0jk")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Block_Player" unique_id=1299240207]
-position = Vector2(1.5026455, -5.5832634)
-rotation = -0.7254213
-scale = Vector2(0.62757313, 0.6434042)
-texture = ExtResource("6_lr4ld")
+position = Vector2(1.7513274, -1.2916374)
+rotation = -1.5707964
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("7_rpf30")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block_Player" unique_id=370883581]
 shape = SubResource("CapsuleShape2D_lr4ld")
