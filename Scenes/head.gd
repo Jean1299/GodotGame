@@ -3,7 +3,7 @@ extends RigidBody2D
 var isFollowing : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.global_position = Vector2(randf_range(5, 1145), randf_range(5, 570))
+	self.global_position = Vector2(randf_range(500, 1145), randf_range(5, 570))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

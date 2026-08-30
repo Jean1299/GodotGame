@@ -116,7 +116,7 @@ scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_u1ler")
 
 [node name="object3" type="RigidBody2D" parent="." unique_id=1289494046]
-position = Vector2(443, 568)
+position = Vector2(389, 395)
 gravity_scale = 0.0
 script = ExtResource("3_lrixb")
 metadata/_edit_group_ = true
@@ -144,3 +144,28 @@ texture = ExtResource("6_ake4f")
 position = Vector2(-7, -10)
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_u1ler")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1603213555]
+position = Vector2(-62, -43.999996)
+scale = Vector2(40.772095, 0.8432164)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=896979318]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.38039216, 0.69803923, 0.39215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=350963160]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_ake4f")
+
+[node name="correctArea3_4" type="Area2D" parent="." unique_id=1763270182]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="correctArea3_4" unique_id=416721917]
+shape = SubResource("RectangleShape2D_ky58t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="correctArea3_4" unique_id=1491294130]
+position = Vector2(576, 155.49998)
+scale = Vector2(2.5318682, 0.6122048)
+texture = ExtResource("4_57wpc")
