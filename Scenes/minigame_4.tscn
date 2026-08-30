@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://xjr4mea3ubpj" path="res://Scenes/minigame_4.gd" id="1_xea2i"]
 [ext_resource type="PackedScene" uid="uid://c1d3s65vr8so3" path="res://Scenes/themed_timer.tscn" id="2_lrixb"]
 [ext_resource type="Script" uid="uid://brj1ekm3hi3o8" path="res://Scenes/head.gd" id="3_lrixb"]
-[ext_resource type="Texture2D" uid="uid://hvpluhqd36rf" path="res://exports/index.icon.png" id="3_xea2i"]
+[ext_resource type="Texture2D" uid="uid://c8cs1aq8ssqsr" path="res://area.png" id="4_57wpc"]
+[ext_resource type="Texture2D" uid="uid://ld7s5nf4ii1u" path="res://Coin.png" id="6_ake4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky58t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xlbj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1ler"]
+radius = 11.334561
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ake4f"]
 size = Vector2(40, 40)
@@ -32,25 +34,27 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="correctArea" unique_id=1387653899]
 shape = SubResource("RectangleShape2D_ky58t")
 
-[node name="Sprite2D" type="Sprite2D" parent="correctArea" unique_id=387996988]
-position = Vector2(291, 257.99994)
-scale = Vector2(4.546875, 5.078124)
-texture = ExtResource("3_xea2i")
+[node name="Sprite2D2" type="Sprite2D" parent="correctArea" unique_id=1782327658]
+position = Vector2(291.50006, 258)
+scale = Vector2(1.2769232, 1.2834646)
+texture = ExtResource("4_57wpc")
 
 [node name="ThemedTimer" parent="." unique_id=1035799032 instance=ExtResource("2_lrixb")]
 
 [node name="object1" type="RigidBody2D" parent="." unique_id=1899668659]
-position = Vector2(545, 133)
+position = Vector2(507, 120)
 gravity_scale = 0.0
 script = ExtResource("3_lrixb")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object1" unique_id=681860584]
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_0xlbj")
-
 [node name="Sprite2D" type="Sprite2D" parent="object1" unique_id=1571659238]
-texture = ExtResource("3_xea2i")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ake4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="object1" unique_id=681860584]
+position = Vector2(-7, -10)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_u1ler")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=303051996]
 position = Vector2(-23, 649)
@@ -97,30 +101,34 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_ake4f")
 
 [node name="object2" type="RigidBody2D" parent="." unique_id=2004383519]
-position = Vector2(705, 427)
+position = Vector2(714, 446)
 gravity_scale = 0.0
 script = ExtResource("3_lrixb")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object2" unique_id=1101469789]
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_0xlbj")
+[node name="Sprite2D" type="Sprite2D" parent="object2" unique_id=1150392878]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ake4f")
 
-[node name="Sprite2D" type="Sprite2D" parent="object2" unique_id=969829931]
-texture = ExtResource("3_xea2i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="object2" unique_id=929097851]
+position = Vector2(-8, -10)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_u1ler")
 
 [node name="object3" type="RigidBody2D" parent="." unique_id=1289494046]
-position = Vector2(450, 556)
+position = Vector2(443, 568)
 gravity_scale = 0.0
 script = ExtResource("3_lrixb")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object3" unique_id=1756203798]
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_0xlbj")
+[node name="Sprite2D" type="Sprite2D" parent="object3" unique_id=1649834816]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ake4f")
 
-[node name="Sprite2D" type="Sprite2D" parent="object3" unique_id=139156198]
-texture = ExtResource("3_xea2i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="object3" unique_id=513263536]
+position = Vector2(-8, -11)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_u1ler")
 
 [node name="object4" type="RigidBody2D" parent="." unique_id=977270908]
 position = Vector2(713, 235)
@@ -128,9 +136,11 @@ gravity_scale = 0.0
 script = ExtResource("3_lrixb")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object4" unique_id=1333488891]
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_0xlbj")
+[node name="Sprite2D" type="Sprite2D" parent="object4" unique_id=292922574]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ake4f")
 
-[node name="Sprite2D" type="Sprite2D" parent="object4" unique_id=1869817592]
-texture = ExtResource("3_xea2i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="object4" unique_id=1971101973]
+position = Vector2(-7, -10)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_u1ler")
